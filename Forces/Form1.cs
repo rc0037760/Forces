@@ -50,5 +50,48 @@ namespace Forces
         {
 
         }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            double force, angle;
+
+            try
+            {
+                force = double.Parse(textBox1.Text);
+                // This line reeds textbox 1 and gets the value for the force
+            }
+            catch
+            {
+                MessageBox.Show("Not A correct value.");
+                force = 0.0;
+            }
+            try
+            {
+                 angle = double.Parse(textBox2.Text);
+                //This line reeds textbox 2 and gets the value for an angle 
+            }
+            catch
+            {
+                MessageBox.Show("Not a correct value");
+                angle = 0.0;
+            }
+            double Fx = force * cos(angle);
+
+            label1.Text = "Fx = " + Fx;
+
+            double Fy = force * sin(angle);
+
+            label2.Text = "Fy = " + Fy;
+        }
     }
 }
